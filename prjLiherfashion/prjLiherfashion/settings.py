@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-84)i^6msviz!woxtwm9@emvxhe6e#(avd8y^rlt(s$o+pa$4zx'
 DEBUG = False
 ALLOWED_HOSTS = ['*']
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # -------------------------------------------------------------------
 # Apps instaladas
@@ -99,16 +100,27 @@ WSGI_APPLICATION = 'prjLiherfashion.wsgi.application'
 #     }
 # }
 
-import os
+# import os
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.environ.get('MYSQL_DATABASE', 'liherfashion'),
+#         'USER': os.environ.get('MYSQL_USER', 'root'),
+#         'PASSWORD': os.environ.get('MYSQL_PASSWORD', ''),
+#         'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
+#         'PORT': os.environ.get('MYSQL_PORT', '3306'),
+#     }
+# }
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', 'liherfashion'),
-        'USER': os.environ.get('MYSQL_USER', 'root'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', ''),
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
-        'PORT': os.environ.get('MYSQL_PORT', '3306'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', '3306'),
     }
 }
 
@@ -133,9 +145,11 @@ USE_TZ = True
 # -------------------------------------------------------------------
 # Archivos estáticos
 # -------------------------------------------------------------------
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
