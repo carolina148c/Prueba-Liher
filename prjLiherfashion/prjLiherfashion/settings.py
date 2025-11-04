@@ -61,8 +61,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'prjLiherfashion.urls'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+# CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+# CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # -------------------------------------------------------------------
